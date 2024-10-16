@@ -1,0 +1,18 @@
+body {
+    background-color: #000;
+}
+
+#character {
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#characterImage {
+    width: 130px; /* Largeur de l'image */
+    height: auto; /* Hauteur automatique */
+}
+
+#coinDisplay {
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashMarket - Formulaire</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa; /* Light background */
+            padding: 20px;
+        }
+        .card {
+            background-color: #f8f9fa; /* Light background for the card */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto; /* Center the card */
+        }
+        .form-label {
+            font-weight: 500; /* Semi-bold labels */
+        }
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 15px; /* Rounded corners */
+        }
+        .form-select, .form-check-input {
+            border-radius: 15px; /* Rounded corners */
+        }
+        .card-header {
+            background-color:#6f42c1;; /* Primary color */
+            color: white;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-footer {
+            text-align: center;
+            padding: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        * État sélectionné */
+        .form-check-input:checked {
+            border-color: transparent; /* Supprimer la bordure */
+            background-color: transparent; /* Supprimer le fond */
+        }
+
+        /* Couleurs pour chaque bouton radio */
+        #color-violet:checked {
+            background-color: violet; /* Couleur violet */
+            border: 2px solid violet; /* Bordure violet */
+        }
+
+        #color-jaune:checked {
+            background-color: #FFD700; /* Couleur jaune */
+            border: 2px solid #FFD700; /* Bordure jaune */
+        }
+
+        #color-vert:checked {
+            background-color: green; /* Couleur vert */
+            border: 2px solid green; /* Bordure vert */
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                width: 100%; /* Full width on smaller screens */
+            }
+            .card {
+                transform: translateY(120px);
+                width: 320px;
+                margin-right: 5px;
+            }
+            select.form-select {
+                font-size: 14px;
+            }
+            option {
+                font-size: 14px;
+            }
+            .card-header {
+                height: 50px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            .b {
+                background-color: #6f42c1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card form-container">
+        <div class="card-header">
+            <h3>Fonctionnalités de votre quête</h3>
+        </div>
+        <div class="card-body">
+            <form id="form">
+                <!-- Entreprise -->
+                <div class="mb-3">
+                    <label for="entreprise" class="form-label">Entreprise ou Cooperative</label>
+                    <input type="text" class="form-control" id="entreprise" placeholder="Jitech">
+                </div>
+
+                <!-- Secteur d'activité -->
+                <div class="mb-3">
+                    <label for="secteur" class="form-label">Secteur d'activité</label>
+                    <input type="text" class="form-control" id="secteur" placeholder="Agence de location">
+                </div>
+
+                <!-- Tâche du client -->
+                <div class="mb-3">
+                    <label for="tache" class="form-label">Tâche du client</label>
+                    <select class="form-select" id="tache">
+                        <option value="">Sélectionner une tâche</option>
+                        <option value="commande-minimale">Commande minimale</option>
+                        <option value="referencement-branding">Référencement de branding</option>
+                    </select>
+                </div>
+
+                <!-- Input for Commande Minimale -->
+                <div class="mb-3 hidden" id="commande-minimale-field">
+                    <label for="commande-minimale" class="form-label">Quel est le nombre de commandes minimales ?</label>
+                    <input type="number" class="form-control" id="commande-minimale" placeholder="Entrez le nombre">
+                </div>
+
+                <!-- Input for Référencement -->
+                <div class="mb-3 hidden" id="referencement-field">
+                    <label for="referencement" class="form-label">Lien de référencement</label>
+                    <input type="text" class="form-control" id="referencement" readonly value="https://cashmarket.com/entreprise/referencement">
+                    <small class="form-text text-muted">Copiez ce lien et partagez-le avec vos clients.</small>
+                </div>
+
+                <!-- Choix du jeu -->
+                <div class="mb-3">
+                    <label for="jeu" class="form-label">Choix du jeu</label>
+                    <select class="form-select" id="jeu">
+                        <option value="">Sélectionner un jeu</option>
+                        <option value="tap-to-earn">Tap to Earn</option>
+                        <option value="pacman">Pacman</option>
+                    </select>
+                </div>
+
+                <!-- Personnalisation (CheckBoxes) -->
+                <div class="mb-3 hidden" id="customization-options">
+                    <label class="form-label">Personnaliser le jeu</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="logo" id="custom-logo">
+                        <label class="form-check-label" for="custom-logo">
+                            Logo
+                        </label>
+                    </div>
+                    <!-- Slogan input field -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="slogan" id="custom-slogan">
+                        <label class="form-check-label" for="custom-slogan">
+                            Slogan
+                        </label>
+                    </div>
+                    <div class="mb-3 hidden" id="slogan-field">
+                        <label for="slogan" class="form-label">Entrez votre slogan</label>
+                        <input type="text" class="form-control" id="slogan" placeholder="Votre slogan ici">
+                    </div>
+
+                    <!-- Color selection as radio buttons -->
+                    <div class="mb-3">
+                        <label class="form-label">Choisissez une couleur</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" value="violet" id="color-violet">
+                            <label class="form-check-label" for="color-violet">
+                                Violet
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" value="jaune" id="color-jaune">
+                            <label class="form-check-label" for="color-jaune">
+                                Jaune
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" value="vert" id="color-vert">
+                            <label class="form-check-label" for="color-vert">
+                                Vert
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Upload (shown when Logo checkbox is selected) -->
+                <div class="mb-3 hidden" id="logo-upload">
+                    <label for="logo" class="form-label">Télécharger un logo (format .png, .jpg)</label>
+                    <input type="file" class="form-control" id="logo" accept=".png, .jpg">
+                </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="card-footer">
+            <button type="button" class="btn b text-white" >Confirmer</button>
+            <button type="button" class="btn btn-warning text-white">Annuler</button>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<!-- JavaScript logic -->
+<script>
+    document.getElementById('tache').addEventListener('change', function() {
+        const selectedTask = this.value;
+        const commandeField = document.getElementById('commande-minimale-field');
+        const referencementField = document.getElementById('referencement-field');
+
+        commandeField.classList.add('hidden');
+        referencementField.classList.add('hidden');
+
+        if (selectedTask === 'commande-minimale') {
+            commandeField.classList.remove('hidden');
+        } else if (selectedTask === 'referencement-branding') {
+            referencementField.classList.remove('hidden');
+        }
+    });
+
+    // Show/hide customization options based on checkboxes
+    document.getElementById('custom-logo').addEventListener('change', function() {
+        const logoUpload = document.getElementById('logo-upload');
+        logoUpload.classList.toggle('hidden', !this.checked);
+    });
+
+    document.getElementById('custom-slogan').addEventListener('change', function() {
+        const sloganField = document.getElementById('slogan-field');
+        sloganField.classList.toggle('hidden', !this.checked);
+    });
+
+    // Customize based on game selection
+    document.getElementById('jeu').addEventListener('change', function() {
+        const customizationOptions = document.getElementById('customization-options');
+        if (this.value !== '') {
+            customizationOptions.classList.remove('hidden');
+        } else {
+            customizationOptions.classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>

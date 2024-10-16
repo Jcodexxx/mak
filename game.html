@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style/style.css">
+    <title>Coin Game</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between w-100">
+                    <div class="rounded bg-secondary" style="width: 40px; height: 40px;"></div>
+                    <span class="text-white">Coin par heure : 300k</span>
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots text-white"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Admin</a></li>
+                            <li><a class="dropdown-item" href="#">Terms of Use</a></li>
+                            <li><a class="dropdown-item" href="#">Share</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="position-relative text-center">
+            <img src="assets/images/3.jpeg" class="img-fluid" style="filter: blur(1px);">
+            <div class="position-absolute top-50 start-50 translate-middle" id="character">
+                <img src="assets/images/b.png" class="img-fluid" alt="Character" id="characterImage">
+            </div>
+            <div class="position-absolute top-0 end-0 m-3" id="coinDisplay">
+                <i class="bi bi-currency-coin text-warning" style="font-size: 30px;"></i>
+                <span class="text-white" id="coinCount">Coins: 0</span>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom rounded-top">
+            <div class="container-fluid">
+                <div class="row w-100">
+                    <div class="col text-center">
+                        <i class="bi bi-house" style="font-size: 30px;"></i>
+                        <div>Home</div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="badge bg-info" style="padding: 5px; border-radius: 10px;">
+                            <i class="bi bi-star-half" style="color: white; font-size: 30px;"></i>
+                        </div>
+                        <div>Quest</div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="badge bg-info" style="padding: 5px; border-radius: 10px;">
+                            <i class="bi bi-game-controller" style="color: grey; font-size: 30px;"></i>
+                        </div>
+                        <div>Game</div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="badge bg-info" style="padding: 5px; border-radius: 10px;">
+                            <i class="bi bi-people" style="color: grey; font-size: 30px;"></i>
+                        </div>
+                        <div>Friend</div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="badge bg-info" style="padding: 5px; border-radius: 10px;">
+                            <i class="bi bi-trophy" style="color: grey; font-size: 30px;"></i>
+                        </div>
+                        <div>Leaderboard</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
